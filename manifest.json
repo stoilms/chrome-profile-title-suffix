@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Time Tracking Profile Suffix",
+  "version": "0.1",
+  "description": "Appends a per-profile suffix to every page title so time trackers can tell your Chrome profiles apart.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Set title suffix",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
